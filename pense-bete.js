@@ -154,3 +154,17 @@ form.addEventListener('submit', (event) => {
 });
 
 //?--------------------------------------------------------------------------------------------------------
+
+//! ON VERIFIE SI MOT CLE EST DANS LE CHAMP DE RECHERCHE
+
+// L'objectif va être d'analyser chaque jeu
+// SI le nom du jeu ne contient pas le terme recherché
+// On le cache
+
+for (const unJeu of games) {
+    //? Si le nom du jeu ne contient pas le terme recherché
+    if (checkContain(unJeu.name, search) === false) {
+        //? On cache le jeu
+        hideGame(unJeu.id);
+    }
+}
