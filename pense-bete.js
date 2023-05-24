@@ -168,3 +168,25 @@ for (const unJeu of games) {
         hideGame(unJeu.id);
     }
 }
+
+//?------------------------------------------------------------------------------------------------------
+
+//! ON RAJOUTE UN ELEMENT DANS LE HTML
+
+const titleElement = document.querySelector('h1');
+titleElement.classList.add('titre-page');
+
+// On crée notre élément paragraphe
+const newElement = document.createElement('p');
+// On renseigne un contenu texte pour cet élément
+newElement.textContent = 'Je suis un nouveau contenu texte généré avec JavaScript !';
+
+// On récupère l'élément parent dans lequel on va vouloir mettre notre nouveau paragraphe fraichement créé
+// Je veux récupérer l'élément section qui a l'id "chiens"
+const sectionChiensElement = document.querySelector('#chiens');
+
+// Une fois qu'on a récupéré cet élément (dans une variable)
+// On utilise la méthode Element.append pour ajouter l'élément enfant au parent
+// (rappel, on veut ajouter le nouveau paragraphe à la fin de la section "chiens")
+// elementParent.append(elementEnfant)
+sectionChiensElement.append(newElement);
