@@ -190,3 +190,37 @@ const sectionChiensElement = document.querySelector('#chiens');
 // (rappel, on veut ajouter le nouveau paragraphe à la fin de la section "chiens")
 // elementParent.append(elementEnfant)
 sectionChiensElement.append(newElement);
+
+//! mettre un dalais pour cacher un element
+
+// Cibler le lien
+const campingBtnElement = document.querySelector('#camping');
+
+// Ajouter la classe "on" sur le lien
+campingBtnElement.classList.add('on');
+
+// Retirer la classe "on" après 3 secondes
+
+//* Solution 1 - Fonction à appeler:
+// const removeClassAfterLoad = () => {
+//    Je veux retirer ma class "on"
+//    Avec le code ci-dessous, je supprime intégralement le bouton:
+//    Mais nous, on ne veut pas supprimer l'élément, on veut supprimer la classe "on"
+//   campingBtnElement.remove();
+
+//   On retire la classe "on" pour réafficher l'élément normalement
+//   campingBtnElement.classList.remove('on');
+// };
+
+// setTimeout(removeClassAfterLoad, 3000);
+
+// On ne met jamais de parrenthèses quand on met le nom d'une fonction en callback
+//  Sinon, JS exécute la fonction immédiatement et c'est son retour (ou undefined si pas de retour) qui sera transmis à setTimeOut
+// setTimeout(removeClassAfterLoad(), 3000);
+
+
+//* Solution 2:
+setTimeout(
+    () => campingBtnElement.classList.remove('on'),
+    3000
+);
